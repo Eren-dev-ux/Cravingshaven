@@ -1,0 +1,1787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cravingshaven | Taste Worth Craving</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* =========================
+       RESET
+    ========================= */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f7f1e8;
+      color: #2d211c;
+      font-family: "DM Sans", sans-serif;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      min-height: 82px;
+      padding: 0 5%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      background: rgba(247, 241, 232, 0.96);
+      border-bottom: 1px solid #e5dcd0;
+
+      backdrop-filter: blur(12px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .brand > span:last-child > span {
+      color: #b75b35;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: #2d211c;
+      color: white;
+
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: #b75b35;
+    }
+
+    .nav-cta {
+      padding: 12px 20px;
+
+      border-radius: 30px;
+
+      background: #2d211c;
+      color: white;
+
+      font-weight: 700;
+    }
+
+    .menu-toggle {
+      display: none;
+
+      border: 0;
+      background: none;
+
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      max-width: 1250px;
+      margin: auto;
+
+      padding: 70px 5%;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+
+      align-items: center;
+    }
+
+    .eyebrow {
+      margin-bottom: 14px;
+
+      font-size: 13px;
+      font-weight: 700;
+
+      letter-spacing: 2px;
+
+      color: #a35432;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(50px, 7vw, 86px);
+
+      line-height: 0.98;
+    }
+
+    .hero h1 em {
+      color: #a35432;
+    }
+
+    .lead {
+      max-width: 600px;
+
+      margin: 25px 0;
+
+      color: #6c5c52;
+
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 48px;
+
+      padding: 13px 22px;
+
+      border-radius: 30px;
+
+      font-weight: 700;
+
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn.primary {
+      background: #2d211c;
+      color: white;
+    }
+
+    .btn.ghost {
+      border: 1px solid #2d211c;
+    }
+
+    .trust {
+      margin-top: 30px;
+
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .trust span {
+      letter-spacing: 3px;
+    }
+
+    .trust small {
+      color: #77675e;
+    }
+
+
+    /* HERO IMAGE */
+
+    .hero-card {
+      height: 500px;
+
+      overflow: hidden;
+
+      border-radius: 35px;
+
+      background: #eee7dd;
+
+      box-shadow: 0 25px 70px rgba(45, 33, 28, 0.14);
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+
+      background: #eee7dd;
+    }
+
+
+    /* =========================
+       CATEGORY STRIP
+    ========================= */
+
+    .strip {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 35px;
+
+      padding: 22px 5%;
+
+      background: #2d211c;
+      color: white;
+
+      font-size: 12px;
+      font-weight: 700;
+
+      letter-spacing: 2px;
+    }
+
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    .section {
+      max-width: 1250px;
+      margin: auto;
+
+      padding: 100px 5%;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+
+      gap: 30px;
+
+      margin-bottom: 35px;
+    }
+
+    .section h2 {
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(38px, 5vw, 60px);
+
+      line-height: 1;
+    }
+
+    .muted {
+      color: #77675e;
+    }
+
+
+    /* =========================
+       FILTERS
+    ========================= */
+
+    .filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+
+      margin-bottom: 30px;
+    }
+
+    .filter {
+      padding: 10px 18px;
+
+      border: 1px solid #d9cdc0;
+
+      border-radius: 25px;
+
+      background: transparent;
+
+      cursor: pointer;
+
+      font-family: inherit;
+      font-weight: 600;
+    }
+
+    .filter.active,
+    .filter:hover {
+      background: #2d211c;
+      color: white;
+    }
+
+
+    /* =========================
+       MENU
+    ========================= */
+
+    .menu-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 22px;
+    }
+
+    .menu-card {
+      overflow: hidden;
+
+      border: 1px solid #e7ddd1;
+
+      border-radius: 25px;
+
+      background: white;
+
+      box-shadow: 0 12px 35px rgba(45, 33, 28, 0.06);
+    }
+
+    .menu-image {
+      height: 230px;
+
+      padding: 15px;
+
+      background: #f2ede5;
+    }
+
+    .menu-image img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+
+      border-radius: 18px;
+    }
+
+    .menu-content {
+      padding: 22px;
+    }
+
+    .menu-content h3 {
+      margin-bottom: 8px;
+
+      font-family: "Playfair Display", serif;
+
+      font-size: 23px;
+    }
+
+    .menu-content p {
+      margin-bottom: 15px;
+
+      color: #75665d;
+
+      line-height: 1.5;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: 800;
+
+      color: #a35432;
+    }
+
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+    .about-art {
+      height: 520px;
+
+      overflow: hidden;
+
+      border-radius: 35px;
+
+      background: #eee7dd;
+    }
+
+    .about-art img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+    }
+
+    .about-content p:not(.eyebrow) {
+      color: #6c5c52;
+
+      line-height: 1.8;
+    }
+
+    .stats {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 15px;
+
+      margin-top: 30px;
+    }
+
+    .stats div {
+      padding: 18px;
+
+      border-radius: 18px;
+
+      background: #eee5da;
+    }
+
+    .stats b {
+      display: block;
+
+      margin-bottom: 8px;
+
+      font-family: "Playfair Display", serif;
+
+      font-size: 25px;
+    }
+
+    .stats span {
+      font-size: 13px;
+    }
+
+
+    /* =========================
+       GALLERY
+    ========================= */
+
+    .gallery-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 25px;
+    }
+
+    .gallery-item {
+      position: relative;
+
+      height: 380px;
+
+      overflow: hidden;
+
+      border-radius: 30px;
+
+      background: #eee7dd;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+
+      background: #eee7dd;
+
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.03);
+    }
+
+    .gallery-item span {
+      position: absolute;
+
+      left: 25px;
+      bottom: 25px;
+
+      padding: 14px 20px;
+
+      border-radius: 12px;
+
+      background: rgba(45, 33, 28, 0.92);
+      color: white;
+
+      font-family: "Playfair Display", serif;
+
+      font-size: 24px;
+    }
+
+
+    /* =========================
+       ORDER
+    ========================= */
+
+    .order {
+      display: grid;
+
+      grid-template-columns: 1.3fr 0.7fr;
+
+      gap: 60px;
+
+      align-items: center;
+    }
+
+    .order-description {
+      max-width: 600px;
+
+      color: #6c5c52;
+
+      line-height: 1.7;
+    }
+
+    .order-card {
+      padding: 35px;
+
+      border-radius: 30px;
+
+      background: #2d211c;
+      color: white;
+
+      box-shadow: 0 25px 60px rgba(45, 33, 28, 0.2);
+    }
+
+    .order-icon {
+      font-size: 30px;
+    }
+
+    .order-card h3 {
+      margin: 12px 0;
+
+      font-family: "Playfair Display", serif;
+
+      font-size: 30px;
+    }
+
+    .order-card p {
+      margin-bottom: 20px;
+
+      color: #ddd2c8;
+
+      line-height: 1.6;
+    }
+
+    .full {
+      width: 100%;
+    }
+
+    .order-card small {
+      display: block;
+
+      margin-top: 15px;
+
+      text-align: center;
+
+      color: #d9cec5;
+    }
+
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 50px;
+
+      align-items: center;
+    }
+
+    .contact-text {
+      color: #6c5c52;
+
+      line-height: 1.7;
+    }
+
+    .contact-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+
+      margin-top: 25px;
+    }
+
+    .map-card {
+      min-height: 320px;
+
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 30px;
+
+      background:
+        radial-gradient(
+          circle at 20% 30%,
+          #d9c7b5 2px,
+          transparent 3px
+        ),
+        radial-gradient(
+          circle at 70% 60%,
+          #d9c7b5 2px,
+          transparent 3px
+        ),
+        #eee5da;
+
+      background-size: 35px 35px;
+
+      text-align: center;
+    }
+
+    .pin {
+      font-size: 65px;
+    }
+
+    .map-card span {
+      font-family: "Playfair Display", serif;
+
+      font-size: 30px;
+    }
+
+    .map-card small {
+      display: block;
+
+      margin-top: 5px;
+
+      font-family: "DM Sans", sans-serif;
+
+      font-size: 12px;
+
+      letter-spacing: 2px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 35px 5%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      background: #211814;
+
+      color: white;
+    }
+
+    footer p {
+      color: #bfb1a8;
+    }
+
+    footer a {
+      color: #e4b095;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      .nav {
+        min-height: 75px;
+
+        padding: 0 20px;
+      }
+
+      .brand {
+        font-size: 21px;
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+      }
+
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+
+      .nav.open {
+        flex-wrap: wrap;
+
+        padding-bottom: 15px;
+      }
+
+      .nav.open .nav-links {
+        display: flex;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 15px 0;
+      }
+
+
+      .hero {
+        grid-template-columns: 1fr;
+
+        padding: 45px 20px;
+
+        gap: 35px;
+      }
+
+      .hero h1 {
+        font-size: 55px;
+      }
+
+      .hero-card {
+        height: 330px;
+
+        border-radius: 25px;
+      }
+
+
+      .strip {
+        justify-content: flex-start;
+
+        gap: 20px;
+
+        overflow-x: auto;
+
+        flex-wrap: nowrap;
+
+        white-space: nowrap;
+      }
+
+
+      .section {
+        padding: 70px 20px;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-image {
+        height: 250px;
+      }
+
+
+      .about {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+
+      .about-art {
+        height: 350px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item {
+        height: 330px;
+      }
+
+      .gallery-item span {
+        left: 18px;
+        bottom: 18px;
+
+        font-size: 20px;
+      }
+
+
+      .order {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+
+
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+
+      footer {
+        flex-direction: column;
+
+        text-align: center;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header class="nav" id="navbar">
+
+  <a href="#home" class="brand">
+
+    <span class="brand-mark">
+      C
+    </span>
+
+    <span>
+      Cravings<span>haven</span>
+    </span>
+
+  </a>
+
+
+  <nav class="nav-links">
+
+    <a href="#menu">Menu</a>
+
+    <a href="#about">About</a>
+
+    <a href="#gallery">Gallery</a>
+
+    <a href="#contact">Contact</a>
+
+  </nav>
+
+
+  <a href="#order" class="nav-cta">
+    Order Now
+  </a>
+
+
+  <button
+    class="menu-toggle"
+    id="menuToggle"
+    aria-label="Open menu"
+  >
+    ☰
+  </button>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+
+  <div class="hero-copy">
+
+    <p class="eyebrow">
+      IBADAN • NIGERIA
+    </p>
+
+
+    <h1>
+      Good food.<br>
+      <em>Great cravings.</em>
+    </h1>
+
+
+    <p class="lead">
+
+      Freshly made cakes, pastries, shawarma,
+      loaded fries, small chops and yoghurt —
+      made to turn ordinary moments into
+      something special.
+
+    </p>
+
+
+    <div class="hero-actions">
+
+      <a
+        href="#menu"
+        class="btn primary"
+      >
+        Explore Menu →
+      </a>
+
+
+      <a
+        href="#contact"
+        class="btn ghost"
+      >
+        Find Us
+      </a>
+
+    </div>
+
+
+    <div class="trust">
+
+      <span>
+        ★★★★★
+      </span>
+
+      <strong>
+        5.0
+      </strong>
+
+      <small>
+        Google rating • 15 reviews*
+      </small>
+
+    </div>
+
+  </div>
+
+
+  <div class="hero-card">
+
+    <img
+      src="https://plain-weur-prod-public.komododecks.com/202609/08/ilELwflE5Ks3hZvRPx9j/image.jpg"
+      alt="Cravingshaven"
+    >
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     CATEGORY STRIP
+========================= -->
+
+<section class="strip">
+
+  <div>CAKES</div>
+
+  <div>SHAWARMA</div>
+
+  <div>LOADED FRIES</div>
+
+  <div>SMALL CHOPS</div>
+
+  <div>YOGHURT</div>
+
+</section>
+
+
+
+<!-- =========================
+     MENU
+========================= -->
+
+<section
+  class="section"
+  id="menu"
+>
+
+  <div class="section-head">
+
+    <div>
+
+      <p class="eyebrow">
+        WHAT'S COOKING
+      </p>
+
+      <h2>
+        Our favourites
+      </h2>
+
+    </div>
+
+
+    <p class="muted">
+
+      Explore some of Cravingshaven's
+      most popular treats.
+
+    </p>
+
+  </div>
+
+
+
+  <div class="filters">
+
+    <button
+      class="filter active"
+      data-filter="all"
+    >
+      All
+    </button>
+
+
+    <button
+      class="filter"
+      data-filter="savory"
+    >
+      Savory
+    </button>
+
+
+    <button
+      class="filter"
+      data-filter="sweet"
+    >
+      Sweet
+    </button>
+
+
+    <button
+      class="filter"
+      data-filter="snacks"
+    >
+      Snacks
+    </button>
+
+
+    <button
+      class="filter"
+      data-filter="drinks"
+    >
+      Drinks
+    </button>
+
+  </div>
+
+
+  <div
+    class="menu-grid"
+    id="menuGrid"
+  ></div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section
+  class="section about"
+  id="about"
+>
+
+
+  <div class="about-art">
+
+    <img
+      src="https://plain-weur-prod-public.komododecks.com/202609/08/ilELwflE5Ks3hZvRPx9j/image.jpg"
+      alt="Cravingshaven storefront"
+    >
+
+  </div>
+
+
+  <div class="about-content">
+
+    <p class="eyebrow">
+      OUR STORY
+    </p>
+
+
+    <h2>
+      A little haven
+      for big cravings.
+    </h2>
+
+
+    <p>
+
+      Cravingshaven is an Ibadan food and pastry
+      brand bringing together indulgent treats
+      and satisfying savoury bites.
+
+      From celebration cakes to shawarma and
+      loaded fries, the goal is simple:
+
+      make every order worth coming back for.
+
+    </p>
+
+
+    <div class="stats">
+
+      <div>
+
+        <b>01</b>
+
+        <span>
+          Freshly prepared
+        </span>
+
+      </div>
+
+
+      <div>
+
+        <b>02</b>
+
+        <span>
+          Order-friendly
+        </span>
+
+      </div>
+
+
+      <div>
+
+        <b>03</b>
+
+        <span>
+          Ibadan based
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+<section
+  class="section"
+  id="gallery"
+>
+
+
+  <div class="section-head">
+
+    <div>
+
+      <p class="eyebrow">
+        A TASTE OF THE HAVEN
+      </p>
+
+      <h2>
+        Made for the camera.
+        Better in person.
+      </h2>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="gallery-grid">
+
+
+    <div class="gallery-item">
+
+      <img
+        src="https://plain-weur-prod-public.komododecks.com/202609/08/fotJVuVp8F2CCBVBBQ54/image.jpg"
+        alt="Shawarma"
+      >
+
+      <span>
+        SHAWARMA
+      </span>
+
+    </div>
+
+
+
+    <div class="gallery-item">
+
+      <img
+        src="https://plain-weur-prod-public.komododecks.com/202609/08/mEzzxjJtU1UcsRAaFuJ7/image.jpg"
+        alt="Loaded fries"
+      >
+
+      <span>
+        LOADED FRIES
+      </span>
+
+    </div>
+
+
+
+    <div class="gallery-item">
+
+      <img
+        src="https://plain-weur-prod-public.komododecks.com/202609/08/YSYWTcwJNEORYhTyOICb/image.jpg"
+        alt="Cakes and pastries"
+      >
+
+      <span>
+        CAKES & PASTRIES
+      </span>
+
+    </div>
+
+
+
+    <div class="gallery-item">
+
+      <img
+        src="https://plain-weur-prod-public.komododecks.com/202609/08/CYEGRDgLdPZrV9C5Q8hc/image.jpg"
+        alt="Small chops"
+      >
+
+      <span>
+        SMALL CHOPS
+      </span>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     ORDER
+========================= -->
+
+<section
+  class="section order"
+  id="order"
+>
+
+
+  <div>
+
+    <p class="eyebrow">
+      READY WHEN YOU ARE
+    </p>
+
+
+    <h2>
+      Turn that craving
+      <br>
+      into an order.
+    </h2>
+
+
+    <p class="order-description">
+
+      Contact Cravingshaven directly to ask
+      about today's menu, availability and
+      delivery options.
+
+    </p>
+
+  </div>
+
+
+
+  <div class="order-card">
+
+    <div class="order-icon">
+      ✦
+    </div>
+
+
+    <h3>
+      Order via WhatsApp
+    </h3>
+
+
+    <p>
+
+      Chat with the team about availability
+      and your order.
+
+    </p>
+
+
+    <a
+      class="btn primary full"
+      href="https://wa.me/2348120437813"
+      target="_blank"
+      rel="noopener"
+    >
+      Start a WhatsApp chat →
+    </a>
+
+
+    <small>
+      +234 812 043 7813
+    </small>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section
+  class="section contact"
+  id="contact"
+>
+
+
+  <div>
+
+    <p class="eyebrow">
+      COME BY
+    </p>
+
+
+    <h2>
+      Find Cravingshaven
+    </h2>
+
+
+    <p class="contact-text">
+
+      <strong>
+        Ogunmola Street, Ibadan,
+        Oyo State, Nigeria
+      </strong>
+
+    </p>
+
+
+    <div class="contact-actions">
+
+      <a
+        class="btn primary"
+        href="https://maps.app.goo.gl/W3MwEdvT9gDUoQZ6A"
+        target="_blank"
+        rel="noopener"
+      >
+        Open in Google Maps ↗
+      </a>
+
+
+      <a
+        class="btn ghost"
+        href="https://www.instagram.com/cravingshaven/"
+        target="_blank"
+        rel="noopener"
+      >
+        Instagram ↗
+      </a>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="map-card">
+
+    <div class="pin">
+      ⌖
+    </div>
+
+
+    <span>
+
+      IBADAN
+
+      <small>
+        OYO STATE
+      </small>
+
+    </span>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <div class="brand">
+
+    <span class="brand-mark">
+      C
+    </span>
+
+    <span>
+      Cravings<span>haven</span>
+    </span>
+
+  </div>
+
+
+  <p>
+    © 2026 Cravingshaven.
+    Taste worth craving.
+  </p>
+
+
+  <a href="#home">
+    Back to top ↑
+  </a>
+
+</footer>
+
+
+
+<script>
+
+  /* =========================
+     MENU DATA
+  ========================= */
+
+  const menuItems = [
+
+    {
+      name: "Jumbo Shawarma with Cheese",
+      price: "₦6,000",
+      category: "savory",
+      image: "https://plain-weur-prod-public.komododecks.com/202609/08/fotJVuVp8F2CCBVBBQ54/image.jpg",
+      description: "A generous jumbo shawarma loaded with cheese."
+    },
+
+    {
+      name: "Jumbo Shawarma without Cheese",
+      price: "₦5,000",
+      category: "savory",
+      image: "https://plain-weur-prod-public.komododecks.com/202609/08/fotJVuVp8F2CCBVBBQ54/image.jpg",
+      description: "Our jumbo shawarma without cheese."
+    },
+
+    {
+      name: "Regular Shawarma with Double Sausage",
+      price: "₦3,000",
+      category: "savory",
+      image: "https://plain-weur-prod-public.komododecks.com/202609/08/fotJVuVp8F2CCBVBBQ54/image.jpg",
+      description: "Regular shawarma packed with double sausage."
+    },
+
+    {
+      name: "No Sausage Shawarma",
+      price: "₦2,000",
+      category: "savory",
+      image: "https://plain-weur-prod-public.komododecks.com/202609/08/fotJVuVp8F2CCBVBBQ54/image.jpg",
+      description: "A tasty shawarma option without sausage."
+    },
+
+    {
+      name: "Double Decker Burger with Cheese & Chips",
+      price: "₦6,000",
+      category: "savory",
+      image: "https://plain-weur-prod-public.komododecks.com/202609/08/mEzzxjJtU1UcsRAaFuJ7/image.jpg",
+      description: "Double burger layers with cheese and chips."
+    },
+
+    {
+      name: "Single Burger with Cheese & Chips",
+      price: "₦5,000",
+      category: "savory",
+      image: "https://plain-weur-prod-public.komododecks.com/202609/08/mEzzxjJtU1UcsRAaFuJ7/image.jpg",
+      description: "Single burger with cheese and chips."
+    },
+
+    {
+      name: "Regular Burger with Chips",
+      price: "₦3,500",
+      category: "savory",
+      image: "https://plain-weur-prod-public.komododecks.com/202609/08/mEzzxjJtU1UcsRAaFuJ7/image.jpg",
+      description: "Classic burger served with chips."
+    },
+
+    {
+      name: "Chicken Sandwich with Cheese & Chips",
+      price: "₦5,000",
+      category: "savory",
+      image: "https://plain-weur-prod-public.komododecks.com/202609/08/mEzzxjJtU1UcsRAaFuJ7/image.jpg",
+      description: "Chicken sandwich with cheese and chips."
+    },
+
+    {
+      name: "Chicken Sandwich with Chips",
+      price: "₦3,500",
+      category: "savory",
+      image: "https://plain-weur-prod-public.komododecks.com/202609/08/mEzzxjJtU1UcsRAaFuJ7/image.jpg",
+      description: "Chicken sandwich served with chips."
+    },
+
+    {
+      name: "Hot Dogs with Toppings & Chips",
+      price: "₦3,000",
+      category: "savory",
+      image: "https://plain-weur-prod-public.komododecks.com/202609/08/mEzzxjJtU1UcsRAaFuJ7/image.jpg",
+      description: "Hot dogs with toppings and chips."
+    },
+
+    {
+      name: "Midi Banana Bread with Toppings",
+      price: "₦6,000",
+      category: "sweet",
+      image: "https://plain-weur-prod-public.komododecks.com/202609/08/YSYWTcwJNEORYhTyOICb/image.jpg",
+      description: "Midi banana bread with delicious toppings."
+    },
+
+    {
+      name: "Midi Banana Bread without Toppings",
+      price: "₦4,500",
+      category: "sweet",
+      image: "https://plain-weur-prod-public.komododecks.com/202609/08/YSYWTcwJNEORYhTyOICb/image.jpg",
+      description: "Midi banana bread without toppings."
+    },
+
+    {
+      name: "Cake Loaf",
+      price: "₦6,000",
+      category: "sweet",
+      image: "https://plain-weur-prod-public.komododecks.com/202609/08/YSYWTcwJNEORYhTyOICb/image.jpg",
+      description: "Available in lemon, fruit cake, red velvet, chocolate, strawberry and vanilla."
+    },
+
+    {
+      name: "3 Slices Cake Varieties",
+      price: "₦2,500",
+      category: "sweet",
+      image: "https://plain-weur-prod-public.komododecks.com/202609/08/YSYWTcwJNEORYhTyOICb/image.jpg",
+      description: "Three slices featuring different cake varieties."
+    },
+
+    {
+      name: "Smoothies",
+      price: "₦3,500",
+      category: "drinks",
+      image: "https://plain-weur-prod-public.komododecks.com/202609/08/wzNY4qSKVKCGJPytfWOf/image.jpg",
+      description: "Fresh and fruity smoothies."
+    },
+
+    {
+      name: "Chapman",
+      price: "₦2,000",
+      category: "drinks",
+      image: "https://plain-weur-prod-public.komododecks.com/202609/08/wzNY4qSKVKCGJPytfWOf/image.jpg",
+      description: "Refreshing Chapman drink."
+    },
+
+    {
+      name: "Fruity Zobo Drink",
+      price: "₦1,500",
+      category: "drinks",
+      image: "https://plain-weur-prod-public.komododecks.com/202609/08/wzNY4qSKVKCGJPytfWOf/image.jpg",
+      description: "Fruity and refreshing zobo drink."
+    },
+
+    {
+      name: "Fruity Yoghurt Parfait",
+      price: "₦5,500",
+      category: "sweet",
+      image: "https://plain-weur-prod-public.komododecks.com/202609/08/wzNY4qSKVKCGJPytfWOf/image.jpg",
+      description: "Creamy fruity yoghurt parfait."
+    }
+
+  ];
+
+
+  /* =========================
+     DISPLAY MENU
+  ========================= */
+
+  const menuGrid =
+    document.getElementById("menuGrid");
+
+
+  function displayMenu(category = "all") {
+
+    const filteredItems =
+      category === "all"
+        ? menuItems
+        : menuItems.filter(
+            item => item.category === category
+          );
+
+
+    menuGrid.innerHTML =
+      filteredItems.map(item => `
+
+        <article class="menu-card">
+
+          <div class="menu-image">
+
+            <img
+              src="${item.image}"
+              alt="${item.name}"
+              loading="lazy"
+            >
+
+          </div>
+
+
+          <div class="menu-content">
+
+            <h3>
+              ${item.name}
+            </h3>
+
+            <p>
+              ${item.description}
+            </p>
+
+            <div class="price">
+              ${item.price}
+            </div>
+
+          </div>
+
+        </article>
+
+      `).join("");
+
+  }
+
+
+  /* =========================
+     FILTER BUTTONS
+  ========================= */
+
+  const filters =
+    document.querySelectorAll(".filter");
+
+
+  filters.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      filters.forEach(btn =>
+        btn.classList.remove("active")
+      );
+
+
+      button.classList.add("active");
+
+
+      displayMenu(
+        button.dataset.filter
+      );
+
+    });
+
+  });
+
+
+  /* =========================
+     MOBILE MENU
+  ========================= */
+
+  const menuToggle =
+    document.getElementById("menuToggle");
+
+  const navbar =
+    document.getElementById("navbar");
+
+
+  menuToggle.addEventListener("click", () => {
+
+    navbar.classList.toggle("open");
+
+  });
+
+
+  /* CLOSE MOBILE MENU */
+
+  document.querySelectorAll(".nav-links a")
+    .forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        navbar.classList.remove("open");
+
+      });
+
+    });
+
+
+  /* =========================
+     LOAD MENU
+  ========================= */
+
+  displayMenu();
+
+</script>
+
+
+</body>
+</html>
